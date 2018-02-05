@@ -1,0 +1,31 @@
+@startuml
+
+package ui {
+    class Dashboard {
+        -layout
+    }
+
+    class WidgetView {
+        -htmlFile
+        -scssFile
+    }
+}
+
+package domain {
+    class Job
+
+    class Widget {
+        -coffeeScriptFile
+    }
+}
+
+package persistence {
+    class Data
+}
+
+Dashboard o-- "*" WidgetView
+WidgetView --> Widget
+Job <-- Widget
+Job --> Data
+
+@enduml
